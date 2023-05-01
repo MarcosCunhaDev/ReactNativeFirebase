@@ -6,9 +6,10 @@ import {
   Keyboard,
   ScrollView,
 } from 'react-native';
-import {Section, Input, ErrorText, Button, ButtonText} from './styles';
+import {Section, Input, ErrorText} from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {createUserProfile} from '../../services/auth';
+import {Button} from '@components/Button';
 
 const RegisterScreen = () => {
   const navigation = useNavigation<any>();
@@ -82,9 +83,7 @@ const RegisterScreen = () => {
             />
           </Section>
           {errortext != '' ? <ErrorText> {errortext} </ErrorText> : null}
-          <Button activeOpacity={0.5} onPress={handleSubmitButton}>
-            <ButtonText>REGISTER</ButtonText>
-          </Button>
+          <Button text="REGISTER" onPress={handleSubmitButton} />
         </KeyboardAvoidingView>
       </ScrollView>
     </SafeAreaView>

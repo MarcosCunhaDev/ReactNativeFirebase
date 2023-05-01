@@ -4,6 +4,7 @@ import {Container, ActivityIndicator} from './styles';
 
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
+import {Button} from '@components/Button';
 
 const SplashScreen = () => {
   const navigation = useNavigation<any>();

@@ -2,7 +2,8 @@ import React, {useState, createRef} from 'react';
 import {View, ScrollView, Keyboard, KeyboardAvoidingView} from 'react-native';
 import * as s from './styles';
 import {useNavigation} from '@react-navigation/native';
-import {signInWithEmailAndPassword} from '../../services/auth';
+import {Button} from '@components/Button';
+import {signInWithEmailAndPassword} from '@services/auth';
 
 const LoginScreen = () => {
   const navigation = useNavigation<any>();
@@ -65,9 +66,7 @@ const LoginScreen = () => {
               />
             </s.Section>
             {errortext != '' ? <s.ErrorText> {errortext} </s.ErrorText> : null}
-            <s.Button activeOpacity={0.5} onPress={handleSubmitPress}>
-              <s.ButtonText>LOGIN</s.ButtonText>
-            </s.Button>
+            <Button text="Login" onPress={handleSubmitPress} />
             <s.RegisterText
               onPress={() => navigation.navigate('RegisterScreen')}>
               New Here ? Register

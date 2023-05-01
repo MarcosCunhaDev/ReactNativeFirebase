@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, SafeAreaView, Alert} from 'react-native';
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
-import {Button, ButtonText} from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {Button} from '@components/Button';
 
 const HomeScreen = () => {
   const navigation = useNavigation<any>();
@@ -70,9 +70,7 @@ const HomeScreen = () => {
               Welcome {user.displayName ? user.displayName : user.email}
             </Text>
           ) : null}
-          <Button activeOpacity={0.5} onPress={logout}>
-            <ButtonText>Logout</ButtonText>
-          </Button>
+          <Button onPress={logout} text="Logout" />
         </View>
       </View>
     </SafeAreaView>
